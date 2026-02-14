@@ -1,0 +1,267 @@
+.stress-monitor {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.stress-monitor h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.monitor-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.monitor-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .monitor-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-container {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video,
+.video-container canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.analysis-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stress-meter {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stress-meter h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.8em;
+}
+
+.stress-bar {
+  height: 30px;
+  background: linear-gradient(90deg, #28a745 0%, #ffc107 50%, #dc3545 100%);
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: width 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.intensity {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.intensity.minimal {
+  color: #28a745;
+}
+
+.intensity.low {
+  color: #90ee90;
+}
+
+.intensity.moderate {
+  color: #ffc107;
+}
+
+.intensity.high {
+  color: #ff8800;
+}
+
+.intensity.critical {
+  color: #dc3545;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.factors {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.factors h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.factor-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #667eea;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.factor-item .label {
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.factor-item .value {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
+
+.factor-item .description {
+  margin: 0;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: right;
+}
+
+.recommendations {
+  background: rgba(139, 69, 19, 0.2);
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.recommendations h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #ffc107;
+}
+
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.recommendations li:last-child {
+  border-bottom: none;
+}
+
+.recommendations li::before {
+  content: '✓';
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .stress-monitor {
+    padding: 10px;
+  }
+
+  .stress-monitor h1 {
+    font-size: 1.8em;
+  }
+
+  .monitor-controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .analysis-panel {
+    padding: 15px;
+  }
+}
