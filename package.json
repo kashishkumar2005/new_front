@@ -2,17 +2,18 @@
   "name": "normal-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kashishkumar2005.github.io/new_front",
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@mediapipe/face_mesh": "^0.4.164",
+    "@mediapipe/pose": "^0.4.164",
+    "@tensorflow-models/face-landmarks-detection": "^1.0.0",
+    "@tensorflow-models/pose-detection": "^1.0.0",
+    "@tensorflow/tfjs": "^4.0.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^13.5.0",
-    "@tensorflow/tfjs": "^4.0.0",
-    "@tensorflow-models/pose-detection": "^1.0.0",
-    "@mediapipe/pose": "^0.4.164",
-    "@mediapipe/face_mesh": "^0.4.164",
-    "@tensorflow-models/face-landmarks-detection": "^1.0.0",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-confetti": "^6.4.0",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +50,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6"
   }
 }
