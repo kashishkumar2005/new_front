@@ -145,6 +145,7 @@ The new features are accessible from the main navigation bar:
 - ☕ **Mentoring** - Browse and book mentors (existing)
 - 📊 **My Reports** - Submit/view session feedback (NEW)
 - 🧠 **Mentor Hub** - Manage sessions and reports (NEW)
+- **Admin Page** - Added Admin page
 
 ---
 
